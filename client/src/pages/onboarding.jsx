@@ -20,7 +20,7 @@ function onboarding() {
     <h2 className="text-2xl">Create your profile</h2>
     <div className="flex gap-6 mt-6">
       <div className="flex flex-col items-center justify-center mt-5 gap-6">
-        {userInfo.name}
+       
       </div>
     </div>
   </div>;
