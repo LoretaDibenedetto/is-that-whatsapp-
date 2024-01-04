@@ -33,7 +33,7 @@ function onboarding() {
       <Input name="About" state= {about} setState={setAbout}/>
       </div>
     <div>
-      <Avatar type="lg" image={image} setImage={setImage}/>
+      <Avatar type="xl" image={image} setImage={setImage}/>
     </div>
     </div>
   </div>
