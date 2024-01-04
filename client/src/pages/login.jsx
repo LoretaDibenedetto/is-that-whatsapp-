@@ -3,7 +3,7 @@ import Image from "next/image";
 import {FcGoogle} from "react-icons/fc";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { firebaseAuth } from "@/utils/FirebaseConfig";
-import { CHECk_USER_ROUTE } from "@/utils/ApiRoutes";
+import { CHECK_USER_ROUTE } from "@/utils/ApiRoutes";
 import { useRouter } from "next/router";
 import axios from "axios";
 
