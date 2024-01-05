@@ -1,9 +1,30 @@
 import React from "react";
 import { useRef } from "react";
+import { useEffect } from "react";
 
 function ContextMenu({options, cordinates, ContextMenu, setContextMenu}) {
   const contextMenuRef = useRef(null);
-  const handleClick = (e, callback) => {}
+
+  useEffect(() => {
+    const handleOutsideClick =(event) =>{
+      if(event.target.id !== "context-opener"){
+        if(contextMenuRef.current && !contextMenuRef.current.contains(event.target))
+        {
+          setContextMenu(false)
+        }
+    }
+  }
+  document.addEventListener("click", handleOutsideClick);
+  return () => {
+    document.removeEventListener("click", handleOutsideClick);
+  };
+},[]);
+
+  const handleClick = (e, callback) => {
+    e.stopPropagation();
+    setContextMenu(false);
+    callback();
+  }
   return <div className={`bg-dropdown-background fixed py-2 z-[100] shadow-xl]`}
               ref={contextMenuRef}
               style={{

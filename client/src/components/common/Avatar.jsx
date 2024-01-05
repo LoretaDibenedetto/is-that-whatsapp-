@@ -15,7 +15,11 @@ function Avatar({type,image, setImage}) {
     setContextMenuVisible(true);
   }
 
-  const  contextMenuOptions= [{name: "Take Photo", callback:()=> {}}]
+  const  contextMenuOptions= [
+    {name: "Take Photo", callback:()=> {}},
+  {name: "Choose From Library", callback:()=> {}},
+  {name: "Upload Photo", callback:()=> {}},
+  {name: "Remove Photo", callback:()=> {}}]
   return(
   <>
   
