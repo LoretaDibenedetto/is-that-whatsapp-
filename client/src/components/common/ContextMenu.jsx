@@ -2,7 +2,7 @@ import React from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
 
-function ContextMenu({options, cordinates, ContextMenu, setContextMenu}) {
+function ContextMenu({options, cordinates, contextMenu, setContextMenu}) {
   const contextMenuRef = useRef(null);
 
   useEffect(() => {

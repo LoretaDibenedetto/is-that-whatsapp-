@@ -52,15 +52,16 @@ function Avatar({type,image, setImage}) {
         >
 
         <div className={`z-10 bg-photopicker-overlay-background h-60 w-60 absolute top-0 left-0 flex item-center rounded-full justify-center flex-col text-center gap-2
-        ${hover ? "visible" : "hidden"}
-        `}
-        onClick={e=> showContextMenu(e)}
-        >
-          <FaCamera className="text-2xl" id="context-opener"
-           onClick={e=> showContextMenu(e)}
-          
-           />
-          <span   id="context-opener" onClick={e=> showContextMenu(e)}>Change <br/> Profile <br/> Photo</span>
+            ${hover ? "visible" : "hidden"}
+            `}
+              onClick={e=> showContextMenu(e)}
+              id= "context-opener"
+            >
+              <FaCamera className="text-2xl" id="context-opener"
+              onClick={e=> showContextMenu(e)}
+              
+              />
+              <span   id="context-opener" onClick={e=> showContextMenu(e)}>Change <br/> Profile <br/> Photo</span>
           
         </div>
         <div className=" flex items-center justify-center h-60 w-60 ">
