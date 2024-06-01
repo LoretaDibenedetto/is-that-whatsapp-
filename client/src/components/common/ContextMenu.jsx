@@ -5,6 +5,7 @@ import { useEffect } from "react";
 function ContextMenu({options, cordinates, contextMenu, setContextMenu}) {
   const contextMenuRef = useRef(null);
 
+
   useEffect(() => {
     const handleOutsideClick =(event) =>{
       if(event.target.id !== "context-opener"){
@@ -13,12 +14,13 @@ function ContextMenu({options, cordinates, contextMenu, setContextMenu}) {
           setContextMenu(false)
         }
     }
-  }
+  };
   document.addEventListener("click", handleOutsideClick);
   return () => {
     document.removeEventListener("click", handleOutsideClick);
   };
 },[]);
+
 
   const handleClick = (e, callback) => {
     e.stopPropagation();

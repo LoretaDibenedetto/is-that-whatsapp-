@@ -17,27 +17,30 @@ const [grabPhoto , setGrabPhoto]= useState(false);
   };
 
   useEffect(()=>{
-if(grabPhoto){
-  const data = document.getElementById("photo-picker");
-  data.click();
-  document.body.onfocus = (e) =>{
-    setGrabPhoto(false)
+  if(grabPhoto){
+    const data = document.getElementById("photo-picker");
+    data.click();
+    document.body.onfocus = (e) =>{
+      setGrabPhoto(false)
   }
 }
   },[grabPhoto])
 
   const  contextMenuOptions= [
-    {name: "Take Photo", callback:()=> {}},
+  {name: "Take Photo", callback:()=> {}},
   {name: "Choose From Library", callback:()=> {}},
   {name: "Upload Photo", callback:()=> {
    setGrabPhoto(true);
   }},
-  {name: "Remove Photo", callback:()=> {
+  {name: "Remove Photo", 
+    callback:()=> {
     setImage("/default_avatar.png");
   },
 },
 
 ];
+
+
 const photoPickerChange = () =>{};
   return(
   <>
@@ -101,10 +104,10 @@ const photoPickerChange = () =>{};
   options={contextMenuOptions}
   cordinates={contextMenuCordinates}
   ContextMenu={isContextMenuVisible}
-  setContextMenu={setIsContextMenuVisible}
+  setContextMenu={setContextMenuVisible}
   />
   )}
-  {grabPhotos && <PhotoPicker onChange={PhotoPickerChange} />}
+  {grabPhoto && <PhotoPicker onChange={photoPickerChange} />}
 </>
   
   

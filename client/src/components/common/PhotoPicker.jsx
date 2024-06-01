@@ -1,6 +1,6 @@
 import React from "react";
-import { Component } from "react/cjs/react.production.min";
-import {ReactDOM} from "react-dom";
+
+import ReactDOM from "react-dom/client";
 
 function PhotoPicker({onChange}) {
   const component =(
