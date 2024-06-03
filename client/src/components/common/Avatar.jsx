@@ -21,8 +21,11 @@ const [grabPhoto , setGrabPhoto]= useState(false);
     const data = document.getElementById("photo-picker");
     data.click();
     document.body.onfocus = (e) =>{
-      setGrabPhoto(false)
-  }
+      setTimeout(()=>{
+
+        setGrabPhoto(false)
+      },1000);
+  };
 }
   },[grabPhoto])
 
@@ -41,7 +44,21 @@ const [grabPhoto , setGrabPhoto]= useState(false);
 ];
 
 
-const photoPickerChange = () =>{};
+const photoPickerChange = async (e) =>{
+  const file = e.target.files[0];
+  const reader = new FileReader();
+  const data = document.createElement("img");
+  reader.onload =function(event){
+    data.src = event.target.result;
+    data.setAttribute("data-src",event.target.result);
+  }
+  reader.readAsDataURL(file);
+  setTimeout(()=> {
+    console.log(data.src);
+    setImage(data.src);
+
+  },100)
+};
   return(
   <>
   
